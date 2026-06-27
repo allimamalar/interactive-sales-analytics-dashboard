@@ -1,77 +1,49 @@
-import io
-import sys
-import traceback
 import os
 import hashlib
-from datetime import datetime
-import numpy as np
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 import streamlit as st
-from dotenv import load_dotenv
 import psycopg
 from psycopg.rows import dict_row
+from dotenv import load_dotenv
 
-# Load variables and DB connection
+# Load variables
 load_dotenv()
 DB_URL = os.environ.get("DATABASE_URL")
 
+# --- DATABASE CONNECTION ---
 def get_db_connection():
-    return psycopg.connect(DB_URL, row_factory=dict_row)
+    if not DB_URL:
+        st.error("DATABASE_URL is not set in environment variables.")
+        return None
+    try:
+        return psycopg.connect(DB_URL, row_factory=dict_row)
+    except Exception as e:
+        st.error(f"Database connection error: {e}")
+        return None
 
-# =============================================================================
-# 4. DATABASE CREDENTIAL FUNCTIONS (Replaces JSON)
-# =============================================================================
-
+# --- AUTH & DB FUNCTIONS ---
 def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode()).hexdigest()
 
-def authenticate(username: str, password: str) -> bool:
-    username = username.strip().lower()
-    with get_db_connection() as conn:
-        with conn.cursor() as cur:
-            cur.execute("SELECT password_hash FROM users WHERE username = %s", (username,))
-            row = cur.fetchone()
-            if row:
-                return row["password_hash"] == hash_password(password)
-    return False
-
 def register_user(username: str, password: str) -> bool:
     username = username.strip().lower()
+    conn = get_db_connection()
+    if not conn: return False
     try:
-        with get_db_connection() as conn:
-            with conn.cursor() as cur:
-                cur.execute("INSERT INTO users (username, password_hash) VALUES (%s, %s)", 
-                            (username, hash_password(password)))
-                conn.commit()
+        with conn.cursor() as cur:
+            cur.execute("INSERT INTO users (username, password_hash) VALUES (%s, %s)", 
+                        (username, hash_password(password)))
+            conn.commit()
+        conn.close()
         return True
-    except psycopg.errors.UniqueViolation:
+    except Exception as e:
+        st.error(f"Registration error: {e}")
+        conn.close()
         return False
 
-def get_user_files(username: str) -> list:
-    username = username.strip().lower()
-    with get_db_connection() as conn:
-        with conn.cursor() as cur:
-            cur.execute("SELECT files FROM users WHERE username = %s", (username,))
-            row = cur.fetchone()
-            return row["files"] if row else []
-
-def add_file_to_user(username: str, filename: str) -> None:
-    username = username.strip().lower()
-    with get_db_connection() as conn:
-        with conn.cursor() as cur:
-            # Append filename to the files array in Postgres
-            cur.execute("""
-                UPDATE users 
-                SET files = array_append(files, %s) 
-                WHERE username = %s AND NOT (%s = ANY(files))
-            """, (filename, username, filename))
-            conn.commit()
-
-# --- Call this function at app startup to ensure table exists ---
+# --- SAFE INITIALIZATION ---
 def init_db():
-    with get_db_connection() as conn:
+    conn = get_db_connection()
+    if conn:
         with conn.cursor() as cur:
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS users (
@@ -82,11 +54,22 @@ def init_db():
                 );
             """)
             conn.commit()
+        conn.close()
 
+# Run initialization safely
 init_db()
 
-# ... (Rest of your original code follows: get_sample_data, render_sidebar, etc.)
-def get_db_connection():
-    conn = psycopg.connect(DB_URL, row_factory=dict_row)
-    print(f"DEBUG: Connected to database: {conn.info.dbname}")
-    return conn
+# --- MAIN APP UI ---
+st.title("Interactive Sales Analytics Dashboard")
+st.write("Welcome! If you see this, the app is running correctly.")
+
+# Example test to see if DB is reachable
+if st.button("Test Database Connection"):
+    conn = get_db_connection()
+    if conn:
+        st.success("Successfully connected to the database!")
+        conn.close()
+    else:
+        st.error("Could not connect to the database.")
+
+# ... (Continue with your other dashboard UI code here) ...
