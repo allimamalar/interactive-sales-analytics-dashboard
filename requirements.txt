@@ -1,0 +1,22 @@
+# =============================================================================
+# requirements.txt — Interactive Sales Analytics Dashboard
+# =============================================================================
+# All version pins use >= to allow compatible patch-level upgrades while
+# preventing breaking major-version changes.  Adjust upper bounds (<) in a
+# production lock-file workflow (e.g. pip-compile) as needed.
+# =============================================================================
+
+# Core dashboard framework.
+streamlit>=1.28.0
+
+# Data manipulation and analysis.
+pandas>=2.1.0
+
+# Numerical computing — required by pandas and plotly internally.
+numpy>=1.24.0
+
+# Interactive charting with WebGL support.
+plotly>=5.18.0
+
+# Excel read/write support (required by pandas .read_excel / .to_excel).
+openpyxl

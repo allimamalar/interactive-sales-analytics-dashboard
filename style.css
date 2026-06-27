@@ -1,0 +1,389 @@
+/* ── Google Fonts ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ── Root variables ────────────────────────────────────────────────────────── */
+:root {
+    /* Deep space premium dark background */
+    --bg-main      : #0A0A0F;
+    /* Soft frosted glass surface */
+    --bg-surface   : rgba(20, 20, 30, 0.45);
+    /* Elevated surface for active elements */
+    --bg-elevated  : rgba(40, 40, 60, 0.6);
+    /* Elegant vibrant cyan accent */
+    --accent       : #00F0FF;
+    --accent-dim   : #0088AA;
+    --accent-glow  : rgba(0, 240, 255, 0.4);
+    /* Soft premium borders */
+    --border       : rgba(255, 255, 255, 0.08);
+    --border-hover : rgba(255, 255, 255, 0.2);
+    /* Typography colors */
+    --text-primary : #FFFFFF;
+    --text-body    : #B0B0C0;
+    --text-muted   : #707080;
+    /* Status colors */
+    --negative     : #FF3366;
+    --positive     : #00FF99;
+    /* Font family */
+    --font-primary : 'Outfit', system-ui, sans-serif;
+    /* Border radii for a smooth feel */
+    --radius-sm    : 8px;
+    --radius-md    : 16px;
+    --radius-lg    : 24px;
+    /* Drop shadows for depth */
+    --shadow-base  : 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --shadow-glow  : 0 0 20px var(--accent-glow);
+}
+
+/* ── Global reset & base ───────────────────────────────────────────────────── */
+html, body, [data-testid="stAppViewContainer"],
+[data-testid="stApp"] {
+    background-color: var(--bg-main) !important;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(0, 136, 170, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.03), transparent 25%);
+    color: var(--text-body) !important;
+    font-family: var(--font-primary) !important;
+}
+
+/* Hide Streamlit default header and footer to prevent overlapping UI */
+header[data-testid="stHeader"] {
+    display: none !important;
+}
+footer {
+    display: none !important;
+}
+
+
+/* ── Scrollbar styling (webkit) ────────────────────────────────────────────── */
+::-webkit-scrollbar              { width: 8px; height: 8px; }
+::-webkit-scrollbar-track        { background: transparent; }
+::-webkit-scrollbar-thumb        { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover  { background: rgba(255, 255, 255, 0.2); }
+
+/* ── Sidebar ────────────────────────────────────────────────────────────────── */
+[data-testid="stSidebar"],
+[data-testid="stSidebarContent"] {
+    background-color: rgba(10, 10, 15, 0.7) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border);
+}
+
+
+
+/* ── Main content area ─────────────────────────────────────────────────────── */
+[data-testid="stMainBlockContainer"],
+section.main > div {
+    background-color: transparent !important;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* ── Headings ───────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+    font-family: var(--font-primary) !important;
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.01em;
+}
+
+/* ── Paragraph & label text ─────────────────────────────────────────────────── */
+p, label, li {
+    font-family: var(--font-primary) !important;
+    color: var(--text-body) !important;
+}
+
+/* ── Streamlit widget labels ────────────────────────────────────────────────── */
+[data-testid="stWidgetLabel"] p,
+.stMultiSelect label,
+.stSelectbox label,
+.stFileUploader label,
+.stTextInput label,
+.stNumberInput label {
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase;
+    color: var(--text-muted) !important;
+    margin-bottom: 0.5rem;
+}
+
+/* ── Input fields & Selectboxes ─────────────────────────────────────────────── */
+input[type="text"], input[type="password"], textarea, [data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+[data-testid="stMultiSelect"] div[data-baseweb="select"] > div {
+    background-color: #FFFFFF !important;
+    border: 1px solid var(--border) !important;
+    color: #000000 !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 0.5rem 0.8rem !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div:focus-within,
+[data-testid="stMultiSelect"] div[data-baseweb="select"] > div:focus-within {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 1px var(--accent) !important;
+    outline: none !important;
+    background-color: #F8F9FA !important;
+}
+
+/* ── Tags in MultiSelect ────────────────────────────────────────────────────── */
+[data-baseweb="tag"] {
+    background-color: rgba(0, 240, 255, 0.1) !important;
+    border: 1px solid rgba(0, 240, 255, 0.3) !important;
+    border-radius: 4px !important;
+    color: var(--accent) !important;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────────── */
+.stButton > button {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    padding: 0.6rem 1.4rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stButton > button:hover {
+    border-color: var(--accent) !important;
+    color: var(--bg-main) !important;
+    background-color: var(--accent) !important;
+    box-shadow: var(--shadow-glow) !important;
+    transform: translateY(-2px);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* Primary/Submit Button override */
+[data-testid="stFormSubmitButton"] > button {
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent)) !important;
+    color: var(--bg-main) !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stFormSubmitButton"] > button:hover {
+    box-shadow: 0 6px 20px var(--accent-glow) !important;
+    transform: translateY(-2px);
+}
+
+/* ── Metric cards (Glassmorphism) ───────────────────────────────────────────── */
+[data-testid="stMetric"] {
+    background: var(--bg-surface) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-base);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+/* Premium gradient top line */
+[data-testid="stMetric"]::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.8;
+}
+
+[data-testid="stMetricLabel"] {
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+}
+
+[data-testid="stMetricValue"] {
+    font-size: 2.5rem !important;
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    margin-top: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+[data-testid="stMetricDelta"] {
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    padding-top: 0.5rem;
+}
+
+/* ── Tabs (Segmented Control style) ─────────────────────────────────────────── */
+[data-testid="stTabs"] {
+    margin-top: 1rem;
+}
+
+[data-testid="stTabs"] button {
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    color: var(--text-muted) !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+[data-testid="stTabs"] button:hover {
+    color: var(--text-primary) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+[data-testid="stTabs"] button[aria-selected="true"] {
+    color: var(--bg-main) !important;
+    background: var(--text-primary) !important;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Ensure paragraph tags inside buttons and tabs inherit their parent's color correctly */
+[data-testid="stTabs"] button p,
+.stButton button p,
+[data-testid="stFormSubmitButton"] button p {
+    color: inherit !important;
+}
+
+/* ── Expander ───────────────────────────────────────────────────────────────── */
+[data-testid="stExpander"] {
+    background: var(--bg-surface) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-md) !important;
+    transition: all 0.3s ease;
+}
+
+[data-testid="stExpander"]:hover {
+    border-color: var(--border-hover) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+[data-testid="stExpanderDetails"] {
+    background-color: transparent !important;
+}
+
+/* ── Dataframe / table ──────────────────────────────────────────────────────── */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    overflow: hidden;
+    box-shadow: var(--shadow-base);
+    background: rgba(10, 10, 15, 0.5) !important;
+}
+
+/* ── Alerts ─────────────────────────────────────────────────────────────────── */
+[data-testid="stAlertContainer"] {
+    background: rgba(20, 20, 30, 0.6) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border) !important;
+    border-left: 4px solid var(--accent) !important;
+    border-radius: var(--radius-sm) !important;
+    font-size: 0.9rem !important;
+}
+
+/* ── File uploader ──────────────────────────────────────────────────────────── */
+[data-testid="stFileUploader"] {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px dashed rgba(255, 255, 255, 0.15) !important;
+    border-radius: var(--radius-md) !important;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: var(--accent) !important;
+    background: rgba(0, 240, 255, 0.02) !important;
+}
+
+/* ── Divider ────────────────────────────────────────────────────────────────── */
+hr {
+    border-color: rgba(255, 255, 255, 0.05) !important;
+    margin: 2rem 0;
+}
+
+/* ── Custom Component Utilities ─────────────────────────────────────────────── */
+
+/* Dashboard Title Style */
+.dash-main-title {
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    background: linear-gradient(90deg, var(--text-primary), var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.dash-user-label {
+    font-size: 0.85rem !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    margin-top: 0.8rem !important;
+    text-align: right !important;
+}
+
+/* Section label */
+.section-label {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--accent) !important;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: rgba(0, 240, 255, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+}
+
+/* Login/Signup container enhancements */
+.login-title {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 1rem;
+}
+
+/* Sidebar session info */
+.dash-session {
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    color: var(--bg-main) !important;
+    background: var(--accent) !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 240, 255, 0.2);
+}
+
+/* KPI negative value override */
+.kpi-negative [data-testid="stMetricValue"] {
+    color: var(--negative) !important;
+}
+
+.kpi-negative::before {
+    background: linear-gradient(90deg, transparent, var(--negative), transparent) !important;
+}
+

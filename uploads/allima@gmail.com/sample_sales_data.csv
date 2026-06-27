@@ -1,0 +1,251 @@
+Order_ID,Timestamp,Product_Category,Product_Name,Quantity,Unit_Price,Total_Sales,Cost_Price,Net_Profit,Region,Sales_Channel
+ORD1000,2026-04-13 12:00,Electronics,Smart Watch,2,7600,15200,10669,4531,East,Flipkart
+ORD1001,2026-03-29 13:00,Office Supplies,Notebook Set,1,570,570,447,123,West,Amazon
+ORD1002,2026-02-07 10:00,Office Supplies,Notebook Set,1,600,600,407,193,West,Website
+ORD1003,2026-02-18 19:00,Apparel,Sports Hoodie,1,2500,2500,1637,863,South,Amazon
+ORD1004,2026-02-20 20:00,Apparel,Dry-Fit T-Shirt,1,1200,1200,829,371,North,Website
+ORD1005,2026-01-18 12:00,Electronics,Ergonomic Mouse,1,1500,1500,903,597,South,Flipkart
+ORD1006,2026-01-08 11:00,Appliances,Smart Coffee Maker,2,12000,24000,15522,8478,South,Amazon
+ORD1007,2026-04-16 12:00,Appliances,Smart Coffee Maker,2,10200,20400,17782,2618,South,Amazon
+ORD1008,2026-04-05 16:00,Appliances,Compact Refrigerator,4,18000,72000,52320,19680,North,Amazon
+ORD1009,2026-04-21 13:00,Office Supplies,Mesh Office Chair,2,8075,16150,12186,3964,North,Flipkart
+ORD1010,2026-02-14 09:00,Electronics,Wireless Headphones,1,4275,4275,2703,1572,East,Flipkart
+ORD1011,2026-03-22 16:00,Apparel,Sports Hoodie,1,2375,2375,1634,741,North,Flipkart
+ORD1012,2026-03-13 20:00,Appliances,Smart Coffee Maker,1,12000,12000,7785,4215,East,Amazon
+ORD1013,2026-02-04 09:00,Apparel,Running Shoes,3,3825,11475,9561,1914,East,Flipkart
+ORD1014,2026-05-22 15:00,Apparel,Running Shoes,1,4275,4275,2996,1279,East,Flipkart
+ORD1015,2026-04-06 15:00,Electronics,Ergonomic Mouse,2,1500,3000,1862,1138,East,Website
+ORD1016,2026-05-23 19:00,Electronics,Ergonomic Mouse,2,1275,2550,2112,438,West,Amazon
+ORD1017,2026-02-14 17:00,Electronics,Ergonomic Mouse,1,1350,1350,1100,250,East,Amazon
+ORD1018,2026-04-02 17:00,Apparel,Waterproof Jacket,1,3000,3000,1992,1008,West,Website
+ORD1019,2026-01-03 15:00,Appliances,Robotic Vacuum,1,22000,22000,15485,6515,South,Flipkart
+ORD1020,2026-02-28 14:00,Office Supplies,Notebook Set,1,600,600,365,235,South,Amazon
+ORD1021,2026-02-08 10:00,Apparel,Running Shoes,5,4500,22500,14400,8100,South,Amazon
+ORD1022,2026-02-23 15:00,Electronics,Wireless Headphones,2,4275,8550,6116,2434,South,Amazon
+ORD1023,2026-03-09 15:00,Apparel,Dry-Fit T-Shirt,2,1200,2400,1572,828,West,Amazon
+ORD1024,2026-05-19 09:00,Electronics,Ergonomic Mouse,2,1500,3000,2186,814,West,Flipkart
+ORD1025,2026-05-27 18:00,Apparel,Sports Hoodie,2,2500,5000,3130,1870,North,Flipkart
+ORD1026,2026-03-23 16:00,Electronics,Smart Watch,1,8000,8000,5909,2091,South,Amazon
+ORD1027,2026-04-09 15:00,Office Supplies,Notebook Set,2,540,1080,815,265,South,Website
+ORD1028,2026-02-17 20:00,Electronics,4K Monitor,1,22500,22500,16045,6455,East,Flipkart
+ORD1029,2026-05-28 16:00,Appliances,Robotic Vacuum,3,19800,59400,48862,10538,West,Amazon
+ORD1030,2026-04-14 12:00,Appliances,Compact Refrigerator,4,18000,72000,53715,18285,South,Amazon
+ORD1031,2026-03-23 10:00,Appliances,Compact Refrigerator,1,17100,17100,12722,4378,North,Amazon
+ORD1032,2026-01-21 12:00,Office Supplies,Notebook Set,2,570,1140,775,365,West,Flipkart
+ORD1033,2026-04-25 14:00,Apparel,Waterproof Jacket,5,3000,15000,9884,5116,South,Flipkart
+ORD1034,2026-01-27 10:00,Electronics,Wireless Headphones,1,4500,4500,2831,1669,North,Flipkart
+ORD1035,2026-01-04 11:00,Office Supplies,Standing Desk,5,15000,75000,50286,24714,South,Website
+ORD1036,2026-01-06 11:00,Office Supplies,Standing Desk,1,12750,12750,10243,2507,East,Flipkart
+ORD1037,2026-04-26 13:00,Office Supplies,LED Desk Lamp,1,1800,1800,1180,620,South,Flipkart
+ORD1038,2026-02-23 18:00,Apparel,Dry-Fit T-Shirt,1,1200,1200,840,360,East,Amazon
+ORD1039,2026-05-07 19:00,Appliances,Air Fryer,3,8500,25500,15822,9678,South,Flipkart
+ORD1040,2026-01-26 11:00,Appliances,Smart Coffee Maker,1,11400,11400,7209,4191,West,Website
+ORD1041,2026-01-20 09:00,Office Supplies,Notebook Set,1,600,600,439,161,East,Amazon
+ORD1042,2026-03-07 15:00,Apparel,Waterproof Jacket,1,3000,3000,2241,759,South,Amazon
+ORD1043,2026-02-27 14:00,Electronics,Ergonomic Mouse,1,1500,1500,1020,480,North,Website
+ORD1044,2026-01-08 13:00,Office Supplies,Notebook Set,1,510,510,435,75,West,Amazon
+ORD1045,2026-02-16 11:00,Apparel,Dry-Fit T-Shirt,5,1140,5700,4064,1636,South,Flipkart
+ORD1046,2026-05-25 16:00,Apparel,Sports Hoodie,1,2500,2500,1509,991,North,Amazon
+ORD1047,2026-01-23 17:00,Office Supplies,Standing Desk,4,15000,60000,39981,20019,West,Amazon
+ORD1048,2026-04-28 17:00,Office Supplies,Standing Desk,4,15000,60000,42641,17359,East,Website
+ORD1049,2026-01-22 15:00,Apparel,Dry-Fit T-Shirt,1,1200,1200,741,459,North,Amazon
+ORD1050,2026-03-10 09:00,Appliances,Air Fryer,1,7225,7225,5121,2104,South,Website
+ORD1051,2026-02-08 12:00,Electronics,4K Monitor,2,25000,50000,34763,15237,South,Flipkart
+ORD1052,2026-05-18 18:00,Apparel,Waterproof Jacket,2,3000,6000,4215,1785,West,Flipkart
+ORD1053,2026-01-02 09:00,Office Supplies,Notebook Set,3,570,1710,1262,448,East,Website
+ORD1054,2026-04-11 20:00,Apparel,Running Shoes,4,3825,15300,11328,3972,North,Flipkart
+ORD1055,2026-02-15 10:00,Electronics,Smart Watch,1,7600,7600,5586,2014,North,Amazon
+ORD1056,2026-03-31 10:00,Apparel,Running Shoes,2,4500,9000,5870,3130,East,Website
+ORD1057,2026-04-30 12:00,Electronics,4K Monitor,2,21250,42500,33176,9324,West,Flipkart
+ORD1058,2026-04-09 12:00,Appliances,Smart Coffee Maker,1,11400,11400,8875,2525,North,Website
+ORD1059,2026-01-13 15:00,Electronics,Smart Watch,4,8000,32000,21625,10375,West,Website
+ORD1060,2026-03-27 19:00,Apparel,Running Shoes,4,4500,18000,13087,4913,North,Flipkart
+ORD1061,2026-01-28 12:00,Apparel,Waterproof Jacket,1,2850,2850,1931,919,North,Flipkart
+ORD1062,2026-02-22 15:00,Office Supplies,Standing Desk,4,15000,60000,44768,15232,South,Flipkart
+ORD1063,2026-05-02 13:00,Apparel,Sports Hoodie,2,2500,5000,3726,1274,North,Amazon
+ORD1064,2026-05-25 14:00,Apparel,Waterproof Jacket,1,2850,2850,2169,681,South,Amazon
+ORD1065,2026-01-05 13:00,Appliances,Compact Refrigerator,3,18000,54000,39530,14470,North,Flipkart
+ORD1066,2026-03-12 17:00,Electronics,Ergonomic Mouse,2,1500,3000,2016,984,West,Amazon
+ORD1067,2026-04-01 18:00,Appliances,Compact Refrigerator,1,18000,18000,10830,7170,West,Amazon
+ORD1068,2026-02-27 12:00,Office Supplies,Notebook Set,2,600,1200,854,346,North,Amazon
+ORD1069,2026-04-23 17:00,Office Supplies,Standing Desk,4,15000,60000,36109,23891,West,Website
+ORD1070,2026-03-02 13:00,Office Supplies,Mesh Office Chair,4,8075,32300,24242,8058,East,Website
+ORD1071,2026-05-26 17:00,Electronics,Wireless Headphones,2,4275,8550,6616,1934,North,Flipkart
+ORD1072,2026-01-12 18:00,Office Supplies,Notebook Set,1,540,540,415,125,West,Amazon
+ORD1073,2026-04-02 12:00,Appliances,Robotic Vacuum,2,22000,44000,26913,17087,North,Flipkart
+ORD1074,2026-05-25 17:00,Electronics,4K Monitor,2,22500,45000,31219,13781,South,Flipkart
+ORD1075,2026-05-14 10:00,Apparel,Dry-Fit T-Shirt,4,1200,4800,2939,1861,South,Amazon
+ORD1076,2026-04-19 13:00,Apparel,Dry-Fit T-Shirt,3,1200,3600,2693,907,North,Flipkart
+ORD1077,2026-03-26 18:00,Apparel,Running Shoes,3,3825,11475,9797,1678,South,Website
+ORD1078,2026-04-09 09:00,Electronics,Ergonomic Mouse,5,1350,6750,5621,1129,North,Flipkart
+ORD1079,2026-02-22 13:00,Appliances,Air Fryer,1,8500,8500,5361,3139,North,Flipkart
+ORD1080,2026-01-04 09:00,Electronics,Mechanical Keyboard,1,3500,3500,2452,1048,South,Amazon
+ORD1081,2026-04-28 11:00,Apparel,Waterproof Jacket,2,2700,5400,4104,1296,South,Flipkart
+ORD1082,2026-02-26 09:00,Office Supplies,LED Desk Lamp,2,1800,3600,2494,1106,South,Flipkart
+ORD1083,2026-04-13 14:00,Office Supplies,Notebook Set,2,510,1020,834,186,East,Flipkart
+ORD1084,2026-02-21 17:00,Appliances,Smart Coffee Maker,1,11400,11400,8319,3081,East,Website
+ORD1085,2026-05-13 12:00,Appliances,Robotic Vacuum,2,19800,39600,26837,12763,North,Amazon
+ORD1086,2026-01-06 13:00,Appliances,Smart Coffee Maker,2,12000,24000,15629,8371,East,Website
+ORD1087,2026-03-21 19:00,Appliances,Robotic Vacuum,1,20900,20900,14340,6560,East,Flipkart
+ORD1088,2026-04-03 10:00,Electronics,Mechanical Keyboard,3,3500,10500,6843,3657,South,Website
+ORD1089,2026-01-22 13:00,Appliances,Smart Coffee Maker,1,12000,12000,8809,3191,North,Amazon
+ORD1090,2026-02-14 19:00,Electronics,Mechanical Keyboard,2,3325,6650,4285,2365,South,Flipkart
+ORD1091,2026-03-04 09:00,Appliances,Robotic Vacuum,2,19800,39600,27617,11983,East,Flipkart
+ORD1092,2026-05-07 16:00,Appliances,Air Fryer,1,8075,8075,5689,2386,North,Amazon
+ORD1093,2026-01-14 19:00,Office Supplies,LED Desk Lamp,3,1710,5130,3654,1476,East,Website
+ORD1094,2026-01-18 18:00,Appliances,Compact Refrigerator,1,18000,18000,12790,5210,West,Amazon
+ORD1095,2026-02-08 17:00,Electronics,Mechanical Keyboard,1,3500,3500,2280,1220,North,Amazon
+ORD1096,2026-03-08 17:00,Electronics,Mechanical Keyboard,2,3500,7000,4816,2184,West,Website
+ORD1097,2026-03-24 18:00,Electronics,4K Monitor,2,25000,50000,34280,15720,West,Flipkart
+ORD1098,2026-04-19 14:00,Electronics,Wireless Headphones,1,4500,4500,2803,1697,East,Amazon
+ORD1099,2026-03-16 16:00,Apparel,Running Shoes,2,4500,9000,5954,3046,West,Flipkart
+ORD1100,2026-01-06 10:00,Office Supplies,Notebook Set,1,510,510,447,63,South,Amazon
+ORD1101,2026-03-03 17:00,Appliances,Compact Refrigerator,1,18000,18000,13064,4936,North,Amazon
+ORD1102,2026-04-28 12:00,Apparel,Dry-Fit T-Shirt,1,1200,1200,740,460,South,Amazon
+ORD1103,2026-03-05 14:00,Electronics,Smart Watch,1,6800,6800,5512,1288,South,Amazon
+ORD1104,2026-01-10 13:00,Apparel,Waterproof Jacket,1,2550,2550,2164,386,North,Flipkart
+ORD1105,2026-04-11 17:00,Electronics,Wireless Headphones,1,4500,4500,2977,1523,South,Flipkart
+ORD1106,2026-02-18 13:00,Appliances,Robotic Vacuum,1,18700,18700,15611,3089,North,Amazon
+ORD1107,2026-03-17 11:00,Apparel,Running Shoes,2,4275,8550,6536,2014,West,Flipkart
+ORD1108,2026-04-15 13:00,Appliances,Robotic Vacuum,1,22000,22000,15888,6112,East,Amazon
+ORD1109,2026-03-03 12:00,Electronics,4K Monitor,2,25000,50000,33389,16611,West,Amazon
+ORD1110,2026-02-01 11:00,Electronics,Wireless Headphones,2,4275,8550,5713,2837,North,Flipkart
+ORD1111,2026-02-22 16:00,Office Supplies,LED Desk Lamp,1,1800,1800,1169,631,East,Amazon
+ORD1112,2026-01-15 09:00,Office Supplies,Mesh Office Chair,2,8550,17100,11832,5268,North,Website
+ORD1113,2026-02-02 12:00,Appliances,Air Fryer,3,8075,24225,16608,7617,South,Website
+ORD1114,2026-02-16 12:00,Electronics,Ergonomic Mouse,2,1500,3000,1867,1133,East,Website
+ORD1115,2026-05-10 19:00,Apparel,Sports Hoodie,2,2375,4750,3188,1562,North,Flipkart
+ORD1116,2026-03-15 16:00,Appliances,Air Fryer,1,8500,8500,6307,2193,West,Amazon
+ORD1117,2026-05-21 16:00,Appliances,Air Fryer,1,8075,8075,6211,1864,West,Website
+ORD1118,2026-04-30 13:00,Office Supplies,LED Desk Lamp,2,1800,3600,2487,1113,South,Flipkart
+ORD1119,2026-01-29 16:00,Electronics,Smart Watch,1,8000,8000,5981,2019,South,Amazon
+ORD1120,2026-02-26 09:00,Apparel,Waterproof Jacket,2,3000,6000,3959,2041,North,Website
+ORD1121,2026-05-17 18:00,Office Supplies,Standing Desk,1,15000,15000,9895,5105,North,Amazon
+ORD1122,2026-03-16 14:00,Appliances,Compact Refrigerator,2,18000,36000,24041,11959,East,Flipkart
+ORD1123,2026-04-18 19:00,Apparel,Waterproof Jacket,1,3000,3000,1988,1012,West,Website
+ORD1124,2026-01-29 19:00,Appliances,Air Fryer,2,8500,17000,10653,6347,West,Website
+ORD1125,2026-05-28 14:00,Appliances,Robotic Vacuum,1,22000,22000,14188,7812,West,Website
+ORD1126,2026-05-03 16:00,Apparel,Waterproof Jacket,1,3000,3000,1816,1184,South,Flipkart
+ORD1127,2026-01-18 09:00,Appliances,Compact Refrigerator,2,18000,36000,23980,12020,South,Amazon
+ORD1128,2026-03-04 12:00,Electronics,4K Monitor,2,25000,50000,32042,17958,East,Amazon
+ORD1129,2026-05-04 09:00,Apparel,Sports Hoodie,2,2500,5000,3494,1506,North,Website
+ORD1130,2026-03-08 16:00,Apparel,Sports Hoodie,2,2500,5000,3254,1746,North,Flipkart
+ORD1131,2026-02-20 09:00,Office Supplies,LED Desk Lamp,3,1710,5130,4040,1090,West,Amazon
+ORD1132,2026-05-24 12:00,Office Supplies,Standing Desk,1,15000,15000,9728,5272,South,Flipkart
+ORD1133,2026-03-15 15:00,Electronics,4K Monitor,1,25000,25000,17186,7814,West,Amazon
+ORD1134,2026-01-02 09:00,Apparel,Running Shoes,1,4500,4500,2956,1544,East,Flipkart
+ORD1135,2026-05-20 12:00,Electronics,4K Monitor,2,25000,50000,33270,16730,West,Flipkart
+ORD1136,2026-03-27 20:00,Office Supplies,Standing Desk,1,13500,13500,11012,2488,West,Website
+ORD1137,2026-04-24 11:00,Electronics,Wireless Headphones,2,4500,9000,5748,3252,South,Amazon
+ORD1138,2026-01-04 18:00,Appliances,Smart Coffee Maker,1,12000,12000,7233,4767,South,Website
+ORD1139,2026-02-11 12:00,Electronics,Mechanical Keyboard,2,3500,7000,5071,1929,East,Website
+ORD1140,2026-04-16 14:00,Electronics,Smart Watch,3,6800,20400,16550,3850,West,Website
+ORD1141,2026-02-22 15:00,Appliances,Smart Coffee Maker,1,10800,10800,8587,2213,South,Amazon
+ORD1142,2026-02-23 19:00,Electronics,Smart Watch,2,8000,16000,9763,6237,East,Flipkart
+ORD1143,2026-04-23 19:00,Apparel,Dry-Fit T-Shirt,1,1200,1200,839,361,South,Amazon
+ORD1144,2026-03-10 16:00,Electronics,Mechanical Keyboard,1,3500,3500,2412,1088,East,Website
+ORD1145,2026-04-19 19:00,Appliances,Smart Coffee Maker,1,11400,11400,7335,4065,North,Website
+ORD1146,2026-03-02 19:00,Office Supplies,Mesh Office Chair,1,9500,9500,5810,3690,West,Flipkart
+ORD1147,2026-04-12 10:00,Office Supplies,LED Desk Lamp,3,1800,5400,4019,1381,North,Amazon
+ORD1148,2026-02-26 15:00,Electronics,Ergonomic Mouse,3,1500,4500,3194,1306,North,Website
+ORD1149,2026-04-28 14:00,Office Supplies,Standing Desk,2,12750,25500,21119,4381,North,Website
+ORD1150,2026-01-26 18:00,Office Supplies,LED Desk Lamp,2,1530,3060,2415,645,East,Amazon
+ORD1151,2026-03-20 13:00,Apparel,Running Shoes,1,4500,4500,2984,1516,North,Amazon
+ORD1152,2026-04-26 15:00,Apparel,Waterproof Jacket,2,3000,6000,4185,1815,West,Flipkart
+ORD1153,2026-04-18 20:00,Electronics,Mechanical Keyboard,2,3150,6300,4663,1637,East,Flipkart
+ORD1154,2026-01-15 16:00,Electronics,Ergonomic Mouse,1,1425,1425,1040,385,West,Website
+ORD1155,2026-04-18 10:00,Apparel,Sports Hoodie,1,2250,2250,1828,422,North,Amazon
+ORD1156,2026-04-06 11:00,Apparel,Sports Hoodie,1,2500,2500,1533,967,South,Website
+ORD1157,2026-01-16 16:00,Office Supplies,LED Desk Lamp,1,1800,1800,1170,630,West,Website
+ORD1158,2026-03-06 09:00,Apparel,Running Shoes,1,4500,4500,2900,1600,South,Website
+ORD1159,2026-03-14 09:00,Electronics,Ergonomic Mouse,4,1500,6000,4307,1693,East,Amazon
+ORD1160,2026-02-08 16:00,Apparel,Waterproof Jacket,4,2850,11400,8980,2420,East,Flipkart
+ORD1161,2026-03-13 12:00,Electronics,4K Monitor,1,22500,22500,15176,7324,North,Amazon
+ORD1162,2026-01-03 16:00,Appliances,Smart Coffee Maker,4,12000,48000,35163,12837,East,Amazon
+ORD1163,2026-03-02 19:00,Appliances,Compact Refrigerator,2,17100,34200,22431,11769,West,Flipkart
+ORD1164,2026-01-13 16:00,Electronics,Wireless Headphones,2,4500,9000,5523,3477,North,Flipkart
+ORD1165,2026-05-03 20:00,Electronics,Wireless Headphones,3,4500,13500,8171,5329,East,Website
+ORD1166,2026-01-05 19:00,Apparel,Waterproof Jacket,1,3000,3000,1916,1084,North,Amazon
+ORD1167,2026-05-26 14:00,Electronics,Ergonomic Mouse,3,1500,4500,3369,1131,South,Website
+ORD1168,2026-03-03 11:00,Appliances,Compact Refrigerator,2,18000,36000,24654,11346,North,Website
+ORD1169,2026-01-06 16:00,Apparel,Dry-Fit T-Shirt,3,1140,3420,2628,792,North,Website
+ORD1170,2026-04-17 17:00,Electronics,Mechanical Keyboard,2,3500,7000,4398,2602,North,Flipkart
+ORD1171,2026-02-14 18:00,Electronics,Smart Watch,1,7200,7200,5783,1417,North,Amazon
+ORD1172,2026-02-08 10:00,Office Supplies,Mesh Office Chair,2,8550,17100,11418,5682,West,Website
+ORD1173,2026-02-15 19:00,Electronics,Wireless Headphones,1,4275,4275,3127,1148,West,Website
+ORD1174,2026-03-11 11:00,Appliances,Compact Refrigerator,4,18000,72000,46892,25108,West,Flipkart
+ORD1175,2026-02-06 14:00,Office Supplies,Notebook Set,1,570,570,387,183,North,Amazon
+ORD1176,2026-05-25 18:00,Appliances,Smart Coffee Maker,1,12000,12000,8734,3266,South,Flipkart
+ORD1177,2026-01-29 20:00,Office Supplies,LED Desk Lamp,2,1800,3600,2173,1427,East,Website
+ORD1178,2026-05-14 11:00,Apparel,Waterproof Jacket,1,3000,3000,2010,990,West,Website
+ORD1179,2026-04-09 17:00,Apparel,Sports Hoodie,2,2375,4750,3165,1585,South,Flipkart
+ORD1180,2026-03-25 14:00,Apparel,Sports Hoodie,4,2250,9000,6046,2954,North,Website
+ORD1181,2026-02-16 13:00,Apparel,Dry-Fit T-Shirt,1,1200,1200,897,303,North,Amazon
+ORD1182,2026-05-04 14:00,Apparel,Waterproof Jacket,1,3000,3000,2093,907,West,Amazon
+ORD1183,2026-01-15 20:00,Office Supplies,LED Desk Lamp,1,1530,1530,1314,216,North,Flipkart
+ORD1184,2026-01-27 10:00,Office Supplies,LED Desk Lamp,1,1710,1710,1088,622,West,Amazon
+ORD1185,2026-05-11 12:00,Appliances,Compact Refrigerator,1,18000,18000,11138,6862,West,Website
+ORD1186,2026-03-04 14:00,Appliances,Smart Coffee Maker,2,12000,24000,15517,8483,North,Website
+ORD1187,2026-03-13 13:00,Appliances,Air Fryer,1,8500,8500,5865,2635,West,Flipkart
+ORD1188,2026-02-14 17:00,Electronics,Ergonomic Mouse,1,1425,1425,1008,417,West,Website
+ORD1189,2026-05-25 20:00,Electronics,Ergonomic Mouse,2,1425,2850,1804,1046,West,Website
+ORD1190,2026-01-02 09:00,Electronics,Wireless Headphones,1,4500,4500,2753,1747,South,Flipkart
+ORD1191,2026-04-13 18:00,Appliances,Air Fryer,1,7650,7650,5313,2337,North,Flipkart
+ORD1192,2026-03-02 11:00,Apparel,Waterproof Jacket,2,3000,6000,4151,1849,North,Amazon
+ORD1193,2026-01-08 16:00,Appliances,Robotic Vacuum,1,19800,19800,15888,3912,East,Flipkart
+ORD1194,2026-03-25 12:00,Appliances,Air Fryer,1,8075,8075,5151,2924,West,Amazon
+ORD1195,2026-01-14 19:00,Appliances,Air Fryer,2,8500,17000,11422,5578,East,Amazon
+ORD1196,2026-05-27 15:00,Appliances,Robotic Vacuum,3,20900,62700,43893,18807,West,Flipkart
+ORD1197,2026-02-13 10:00,Appliances,Air Fryer,1,8075,8075,5791,2284,East,Flipkart
+ORD1198,2026-02-04 14:00,Apparel,Sports Hoodie,1,2500,2500,1825,675,East,Amazon
+ORD1199,2026-01-24 12:00,Electronics,Ergonomic Mouse,2,1425,2850,2027,823,South,Website
+ORD1200,2026-04-06 17:00,Office Supplies,Mesh Office Chair,1,9025,9025,6944,2081,South,Amazon
+ORD1201,2026-02-08 18:00,Apparel,Sports Hoodie,1,2500,2500,1643,857,South,Website
+ORD1202,2026-05-23 09:00,Apparel,Waterproof Jacket,4,2850,11400,7523,3877,West,Amazon
+ORD1203,2026-03-19 10:00,Apparel,Running Shoes,1,4050,4050,2866,1184,West,Website
+ORD1204,2026-04-21 16:00,Apparel,Running Shoes,1,4275,4275,3140,1135,North,Website
+ORD1205,2026-01-28 10:00,Apparel,Running Shoes,2,4500,9000,6208,2792,West,Website
+ORD1206,2026-02-16 19:00,Appliances,Compact Refrigerator,1,18000,18000,12011,5989,West,Amazon
+ORD1207,2026-04-15 09:00,Electronics,Ergonomic Mouse,4,1500,6000,3827,2173,South,Website
+ORD1208,2026-04-17 13:00,Apparel,Running Shoes,2,4500,9000,6352,2648,West,Flipkart
+ORD1209,2026-05-14 20:00,Apparel,Running Shoes,5,4500,22500,13915,8585,North,Amazon
+ORD1210,2026-01-29 09:00,Apparel,Sports Hoodie,4,2500,10000,6474,3526,North,Flipkart
+ORD1211,2026-01-12 18:00,Office Supplies,Standing Desk,2,15000,30000,18078,11922,North,Amazon
+ORD1212,2026-01-29 17:00,Apparel,Sports Hoodie,2,2500,5000,3256,1744,South,Flipkart
+ORD1213,2026-05-08 12:00,Office Supplies,Mesh Office Chair,2,9500,19000,14164,4836,North,Flipkart
+ORD1214,2026-01-08 14:00,Electronics,Mechanical Keyboard,5,3325,16625,11482,5143,South,Amazon
+ORD1215,2026-05-25 18:00,Office Supplies,LED Desk Lamp,1,1800,1800,1331,469,South,Website
+ORD1216,2026-01-01 11:00,Apparel,Dry-Fit T-Shirt,2,1080,2160,1647,513,South,Amazon
+ORD1217,2026-03-04 17:00,Electronics,Wireless Headphones,2,3825,7650,5522,2128,East,Website
+ORD1218,2026-03-09 10:00,Electronics,Ergonomic Mouse,3,1425,4275,3214,1061,North,Flipkart
+ORD1219,2026-03-24 19:00,Electronics,Wireless Headphones,2,4500,9000,6223,2777,East,Website
+ORD1220,2026-05-27 20:00,Electronics,Wireless Headphones,2,4500,9000,5999,3001,South,Amazon
+ORD1221,2026-01-11 11:00,Office Supplies,Mesh Office Chair,2,9025,18050,12826,5224,North,Amazon
+ORD1222,2026-03-13 10:00,Appliances,Robotic Vacuum,1,22000,22000,14454,7546,South,Website
+ORD1223,2026-02-13 12:00,Apparel,Sports Hoodie,3,2375,7125,5307,1818,East,Flipkart
+ORD1224,2026-01-21 15:00,Apparel,Sports Hoodie,1,2250,2250,1857,393,West,Flipkart
+ORD1225,2026-02-20 12:00,Electronics,4K Monitor,1,25000,25000,16822,8178,West,Website
+ORD1226,2026-02-21 19:00,Electronics,Ergonomic Mouse,1,1500,1500,1037,463,South,Amazon
+ORD1227,2026-03-18 12:00,Appliances,Smart Coffee Maker,1,12000,12000,8746,3254,East,Website
+ORD1228,2026-03-12 16:00,Electronics,Mechanical Keyboard,4,3500,14000,9291,4709,South,Flipkart
+ORD1229,2026-02-23 09:00,Office Supplies,Notebook Set,1,600,600,360,240,South,Amazon
+ORD1230,2026-01-21 14:00,Office Supplies,Standing Desk,2,14250,28500,18786,9714,North,Website
+ORD1231,2026-03-13 16:00,Office Supplies,Standing Desk,2,15000,30000,19236,10764,East,Flipkart
+ORD1232,2026-03-30 10:00,Apparel,Dry-Fit T-Shirt,1,1200,1200,747,453,North,Flipkart
+ORD1233,2026-04-18 10:00,Electronics,4K Monitor,1,25000,25000,17407,7593,West,Flipkart
+ORD1234,2026-01-11 18:00,Electronics,4K Monitor,1,25000,25000,18704,6296,East,Flipkart
+ORD1235,2026-03-26 10:00,Apparel,Waterproof Jacket,2,3000,6000,4223,1777,East,Amazon
+ORD1236,2026-01-19 12:00,Appliances,Air Fryer,1,8500,8500,5201,3299,West,Website
+ORD1237,2026-04-07 12:00,Apparel,Running Shoes,1,4500,4500,2939,1561,West,Website
+ORD1238,2026-02-18 20:00,Appliances,Robotic Vacuum,1,19800,19800,14982,4818,South,Amazon
+ORD1239,2026-03-08 14:00,Office Supplies,Standing Desk,1,15000,15000,9117,5883,West,Amazon
+ORD1240,2026-04-12 09:00,Apparel,Waterproof Jacket,1,3000,3000,2061,939,South,Website
+ORD1241,2026-03-18 17:00,Apparel,Dry-Fit T-Shirt,1,1200,1200,867,333,West,Website
+ORD1242,2026-05-24 20:00,Office Supplies,Notebook Set,1,600,600,370,230,East,Amazon
+ORD1243,2026-01-05 12:00,Office Supplies,Notebook Set,3,600,1800,1220,580,South,Amazon
+ORD1244,2026-02-01 09:00,Electronics,Ergonomic Mouse,2,1425,2850,1816,1034,North,Flipkart
+ORD1245,2026-04-24 10:00,Electronics,4K Monitor,1,25000,25000,16911,8089,East,Amazon
+ORD1246,2026-02-24 14:00,Apparel,Waterproof Jacket,5,3000,15000,10915,4085,South,Flipkart
+ORD1247,2026-02-18 18:00,Appliances,Air Fryer,2,8075,16150,11557,4593,South,Amazon
+ORD1248,2026-03-08 15:00,Office Supplies,Mesh Office Chair,1,9500,9500,5947,3553,South,Flipkart
+ORD1249,2026-01-20 10:00,Office Supplies,Mesh Office Chair,1,8550,8550,6928,1622,West,Flipkart
