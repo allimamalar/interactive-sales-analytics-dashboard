@@ -23,3 +23,7 @@ openpyxl
 
 psycopg[binary]
 python-dotenv
+streamlit
+pandas
+plotly
+numpy
