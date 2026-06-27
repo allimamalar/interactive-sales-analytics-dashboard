@@ -20,3 +20,6 @@ plotly>=5.18.0
 
 # Excel read/write support (required by pandas .read_excel / .to_excel).
 openpyxl
+
+psycopg[binary]
+python-dotenv
