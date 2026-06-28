@@ -46,7 +46,7 @@ def local_css(file_name):
 # 3. CONSTANTS
 # =============================================================================
 
-USERS_FILE = "users.json"
+
 
 # Plotly theme constant — used on every chart for visual consistency.
 PLOTLY_TEMPLATE: str = "plotly_white"
@@ -56,78 +56,105 @@ PLOTLY_TEMPLATE: str = "plotly_white"
 CHART_BG: str = "rgba(0,0,0,0)"
 
 # =============================================================================
-# 4. JSON CREDENTIAL HELPER FUNCTIONS
+# 4. DATABASE HELPER FUNCTIONS
 # =============================================================================
 
-def load_users() -> dict:
-    if not os.path.exists(USERS_FILE):
-        with open(USERS_FILE, "w") as f:
-            json.dump({}, f)
-        return {}
-    with open(USERS_FILE, "r") as f:
-        users = json.load(f)
-        
-    # Schema migration: {"email": "hash"} -> {"email": {"password": "hash", "files": []}}
-    migrated = False
-    for email, data in users.items():
-        if isinstance(data, str):
-            users[email] = {
-                "id": str(uuid.uuid4()),
-                "email": email,
-                "password": data,
-                "files": []
-            }
-            migrated = True
-        else:
-            if "id" not in data:
-                data["id"] = str(uuid.uuid4())
-                migrated = True
-            if "email" not in data:
-                data["email"] = email
-                migrated = True
-            
-    if migrated:
-        save_users(users)
-        
-    return users
+def get_db_connection():
+    """Returns a new connection to the PostgreSQL database."""
+    return psycopg.connect(DB_URL)
 
-def save_users(users: dict) -> None:
-    with open(USERS_FILE, "w") as f:
-        json.dump(users, f, indent=4)
+def init_db():
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS users (
+                    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+                    email VARCHAR(255) UNIQUE NOT NULL,
+                    password_hash VARCHAR(255) NOT NULL
+                )
+            """)
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS user_files (
+                    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+                    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+                    filename VARCHAR(255) NOT NULL,
+                    file_data BYTEA NOT NULL,
+                    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    UNIQUE (user_id, filename)
+                )
+            """)
+            conn.commit()
+
+# Call init_db on startup
+init_db()
 
 def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode()).hexdigest()
 
 def authenticate(username: str, password: str) -> bool:
-    users = load_users()
     username = username.strip().lower()
-    if username in users:
-        return users[username].get("password") == hash_password(password)
-    return False
+    hashed = hash_password(password)
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id FROM users WHERE email = %s AND password_hash = %s", (username, hashed))
+            return cur.fetchone() is not None
 
 def register_user(username: str, password: str) -> bool:
-    users = load_users()
     username = username.strip().lower()
-    if username in users:
+    hashed = hash_password(password)
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+            try:
+                cur.execute("INSERT INTO users (email, password_hash) VALUES (%s, %s)", (username, hashed))
+                conn.commit()
+                return True
+            except psycopg.errors.UniqueViolation:
+                conn.rollback()
+                return False
+
+def get_user_id(username: str):
+    username = username.strip().lower()
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id FROM users WHERE email = %s", (username,))
+            row = cur.fetchone()
+            return row[0] if row else None
+
+def get_user_files(username: str) -> list:
+    user_id = get_user_id(username)
+    if not user_id:
+        return []
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT filename FROM user_files WHERE user_id = %s ORDER BY uploaded_at DESC", (user_id,))
+            return [row[0] for row in cur.fetchall()]
+
+def add_file_to_user(username: str, filename: str, file_bytes: bytes) -> bool:
+    user_id = get_user_id(username)
+    if not user_id:
         return False
-    users[username] = {
-        "id": str(uuid.uuid4()),
-        "email": username,
-        "password": hash_password(password),
-        "files": []
-    }
-    save_users(users)
-    return True
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+            try:
+                cur.execute(
+                    "INSERT INTO user_files (user_id, filename, file_data) VALUES (%s, %s, %s)",
+                    (user_id, filename, file_bytes)
+                )
+                conn.commit()
+                return True
+            except psycopg.errors.UniqueViolation:
+                conn.rollback()
+                return False
 
-def add_file_to_user(username: str, filename: str) -> None:
-    users = load_users()
-    username = username.strip().lower()
-    if username in users:
-        if filename not in users[username]["files"]:
-            users[username]["files"].append(filename)
-            save_users(users)
-
-UPLOADS_DIR = "uploads"
+def get_file_data(username: str, filename: str) -> bytes | None:
+    user_id = get_user_id(username)
+    if not user_id:
+        return None
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT file_data FROM user_files WHERE user_id = %s AND filename = %s", (user_id, filename))
+            row = cur.fetchone()
+            return row[0] if row else None
 
 # =============================================================================
 # 5. SAMPLE DATA GENERATOR
@@ -366,8 +393,7 @@ def render_sidebar(df_full: pd.DataFrame | None) -> pd.DataFrame | None:
                     st.success(st.session_state["signup_success"])
         else:
             current_user = st.session_state["current_user"]
-            users = load_users()
-            user_files = users.get(current_user, {}).get("files", [])
+            user_files = get_user_files(current_user)
             
             upload_option = "-- Upload New File --"
             options = [upload_option] + user_files
@@ -383,20 +409,15 @@ def render_sidebar(df_full: pd.DataFrame | None) -> pd.DataFrame | None:
                 )
 
                 if uploaded_file is not None:
-                    user_dir = os.path.join(UPLOADS_DIR, current_user)
-                    os.makedirs(user_dir, exist_ok=True)
-                    file_path = os.path.join(user_dir, uploaded_file.name)
+                    file_bytes = uploaded_file.getvalue()
+                    success = add_file_to_user(current_user, uploaded_file.name, file_bytes)
                     
-                    file_exists = os.path.exists(file_path)
-                    if not file_exists or os.path.getsize(file_path) != uploaded_file.size:
-                        with open(file_path, "wb") as f:
-                            f.write(uploaded_file.getbuffer())
-                        
-                    add_file_to_user(current_user, uploaded_file.name)
+                    if success:
+                        st.success(f"File {uploaded_file.name} saved securely to database!")
+                    else:
+                        st.info(f"File {uploaded_file.name} is already in your database.")
                     
-                    # Instead of rendering immediately, rerun so the selectbox shows the new file
-                    # However, st.rerun inside a widget callback isn't needed here if we just
-                    # ingest directly. To be clean, let's ingest directly.
+                    # We can safely use uploaded_file as a file-like object directly for ingest
                     raw = ingest_csv(uploaded_file)
                     if raw is not None:
                         raw = normalise_column_names(raw)
@@ -405,19 +426,16 @@ def render_sidebar(df_full: pd.DataFrame | None) -> pd.DataFrame | None:
                                 raw[col] = coerce_numeric(raw[col])
                         raw = parse_order_dates(raw)
                         st.session_state["df_raw"] = raw
-                        
-                        # Show success and maybe prompt to refresh dropdown
-                        st.success(f"File {uploaded_file.name} saved securely!")
                     else:
                         st.session_state["df_raw"] = None
                 else:
                     st.session_state["df_raw"] = None
             else:
-                # Load from saved history
-                file_path = os.path.join(UPLOADS_DIR, current_user, selected_file)
-                if os.path.exists(file_path):
-                    with open(file_path, "rb") as f:
-                        raw = ingest_csv(f)
+                # Load from database history
+                file_bytes = get_file_data(current_user, selected_file)
+                if file_bytes:
+                    f = io.BytesIO(file_bytes)
+                    raw = ingest_csv(f)
                     if raw is not None:
                         raw = normalise_column_names(raw)
                         for col in ["Sales", "Profit"]:
@@ -428,7 +446,7 @@ def render_sidebar(df_full: pd.DataFrame | None) -> pd.DataFrame | None:
                     else:
                         st.session_state["df_raw"] = None
                 else:
-                    st.error(f"Saved file not found: {selected_file}")
+                    st.error(f"Saved file not found in database: {selected_file}")
                     st.session_state["df_raw"] = None
 
         df = st.session_state.get("df_raw")
