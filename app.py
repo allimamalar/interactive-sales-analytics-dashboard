@@ -5,6 +5,7 @@ import traceback
 import json
 import os
 import hashlib
+import uuid
 from datetime import datetime
 import numpy as np
 import pandas as pd
@@ -70,8 +71,20 @@ def load_users() -> dict:
     migrated = False
     for email, data in users.items():
         if isinstance(data, str):
-            users[email] = {"password": data, "files": []}
+            users[email] = {
+                "id": str(uuid.uuid4()),
+                "email": email,
+                "password": data,
+                "files": []
+            }
             migrated = True
+        else:
+            if "id" not in data:
+                data["id"] = str(uuid.uuid4())
+                migrated = True
+            if "email" not in data:
+                data["email"] = email
+                migrated = True
             
     if migrated:
         save_users(users)
@@ -98,6 +111,8 @@ def register_user(username: str, password: str) -> bool:
     if username in users:
         return False
     users[username] = {
+        "id": str(uuid.uuid4()),
+        "email": username,
         "password": hash_password(password),
         "files": []
     }
